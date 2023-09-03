@@ -12,6 +12,14 @@
   flex-direction: $direction;
 }
 
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    // lighten(), darken(): 퍼센티지에 따라 색상을 어둡게 밝게 하는 함수
+    background-color: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
 body {
   background: $primary-color;
   color: $text-color;
@@ -36,4 +44,8 @@ body {
       color: pink;
     }
   }
+}
+
+.light {
+  @include theme($light-theme: true);
 }
