@@ -3,6 +3,33 @@ $primary-color: #272727;
 $accent-color: #ff652f;
 $text-color: #fff;
 
+// map
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
 body {
   background: $primary-color;
+  color: $text-color;
+}
+
+// nesting
+.main {
+  width: 80%;
+  margin: 0 auto;
+
+  // nesting이 제대로 안 됨
+  // &__paragraph {
+  //   font-weight: map-get($font-weights, bold);
+  // }
+
+  #{&}__paragraph {
+    font-weight: map-get($font-weights, bold);
+
+    &:hover {
+      color: pink;
+    }
+  }
 }
