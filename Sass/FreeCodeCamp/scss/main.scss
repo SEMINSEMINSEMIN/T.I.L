@@ -34,7 +34,7 @@ body {
 // nesting
 .main {
   @include flexCenter(row);
-  width: 80%;
+  width: 80% - 40%;
   margin: 0 auto;
 
   // nesting이 제대로 안 됨
