@@ -42,12 +42,20 @@ body {
   //   font-weight: map-get($font-weights, bold);
   // }
 
-  #{&}__paragraph {
+  #{&}__paragraph1 {
     // font-weight: map-get($font-weights, bold);
     font-weight: weight(bold);
 
     &:hover {
       color: pink;
+    }
+  }
+
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+
+    &:hover {
+      color: $accent-color;
     }
   }
 
