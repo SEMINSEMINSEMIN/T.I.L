@@ -18,8 +18,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            by ${{ github.actor }}:
+            Pull Request Merged!
             
-            ${{ github.event.pull_request.title }}이 main 브랜치에 머지되었습니다.
+            ${{ github.event.pull_request.title }} was merged into main branch by by ${{ github.actor }}
             
             Pull Request URL: ${{ github.event.pull_request.html_url }}
