@@ -1,4 +1,4 @@
-name: Telegram Message on Pull Request Opened
+name: Telegram Message on Pull Request Synchronized
 
 on:
   pull_request:
