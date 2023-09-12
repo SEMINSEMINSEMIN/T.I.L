@@ -17,7 +17,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Pull Request opened!
+            Pull Request Opened!
             
             ${{ github.event.pull_request.title }} was opened by ${{ github.actor }}.
             
