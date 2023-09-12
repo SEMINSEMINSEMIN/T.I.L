@@ -20,6 +20,6 @@ jobs:
           message: |
             Pull Request Merged!
             
-            ${{ github.event.pull_request.title }} was merged into main branch by by ${{ github.actor }}
+            ${{ github.event.pull_request.title }} was merged into main branch by ${{ github.actor }}
             
             Pull Request URL: ${{ github.event.pull_request.html_url }}
