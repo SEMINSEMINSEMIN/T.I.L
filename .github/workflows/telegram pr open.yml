@@ -1,16 +1,14 @@
-name: Telegram Message on Pull Request
+name: Telegram Message on Pull Request Opened
 
 on:
   pull_request:
     types:
       - opened
-      - synchronize
     branches:
       - main
 
 jobs:
-  before-merged:
-    if: github.event.pull_request.merged == false
+  PR-opened:
     runs-on: ubuntu-latest
     steps:
       - name: Send Telegram Message on Pull Request
@@ -19,10 +17,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            by ${{ github.actor }}:
-            
-            Title: ${{ github.event.pull_request.title }}
-            
-            Action: ${{ github.event.action }}
+            Pull Request ${{ github.event.pull_request.title }} was opened by ${{ github.actor }}.
             
             Pull Request URL: ${{ github.event.pull_request.html_url }}
