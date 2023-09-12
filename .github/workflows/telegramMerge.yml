@@ -1,0 +1,25 @@
+name: Telegram Message on Pull Request
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message on Pull Request
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            by ${{ github.actor }}:
+            
+            ${{ github.event.pull_request.title }}이 main 브랜치에 머지되었습니다.
+            
+            Pull Request URL: ${{ github.event.pull_request.html_url }}
