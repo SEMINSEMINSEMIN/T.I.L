@@ -1,9 +1,7 @@
-import Image from 'next/image'
-
-export default function Home() {
+export default function SignUp() {
   return (
     <main>
-      회원가입
+      회원가입 모달
     </main>
   )
 }
